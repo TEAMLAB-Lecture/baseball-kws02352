@@ -286,12 +286,7 @@ def main():
     print("Random Number is : ", random_number)
     # ===Modify codes below=============
     # 위의 코드를 포함하여 자유로운 수정이 가능함
-    cnt = 0
     while user_input != '0':
-        if cnt >= 1:
-            random_number = str(get_not_duplicated_three_digit_number())
-            print("Random Number is : ", random_number)
-        cnt += 1
         user_input = input("input guess number : ")
         if not is_validated_number(user_input):
             if user_input == '0':
@@ -305,6 +300,8 @@ def main():
             while stand:
                 yes_no = input("You win, one more (Y/N) ?")                
                 if is_yes(yes_no):
+                    random_number = str(get_not_duplicated_three_digit_number())
+                    print("Random Number is : ", random_number)
                     stand = False
                 elif is_no(yes_no):
                     stand = False
