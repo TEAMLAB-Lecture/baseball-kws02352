@@ -294,6 +294,8 @@ def main():
         cnt += 1
         user_input = input("input guess number : ")
         if not is_validated_number(user_input):
+            if user_input == '0':
+                break
             print("Wrong Input, Input again")
             continue
         strike_ball = get_strikes_or_ball(user_input, random_number)
